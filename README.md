@@ -2,6 +2,20 @@
 
 Source for my resume.
 
+## Usage
+
+To create the PDF:
+
+```
+make
+```
+
+To clean up:
+
+```
+make clean
+```
+
 ## Resources
 
 * [Simple Resume Latex Template](https://github.com/zachscrivena/simple-resume-cv)
