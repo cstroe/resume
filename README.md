@@ -1,6 +1,6 @@
 # Cosmin Stroe
 
-Source for my resume.
+Source for [my resume](CV.pdf).
 
 ## Usage
 
