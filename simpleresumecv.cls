@@ -72,13 +72,14 @@
 \LoadClass[10pt,oneside]{article}
 
 % Geometry package for page margins.
+% https://ctan.org/pkg/geometry
 \RequirePackage[
 left=0.70in,
 right=0.70in,
 top=0.60in,
 bottom=0.45in,
 nohead,
-includefoot]{geometry}
+nofoot]{geometry}
 
 % PDF settings and properties.
 \RequirePackage{hyperref}
@@ -93,6 +94,9 @@ includefoot]{geometry}
 
 % Current date and time.
 \RequirePackage{datetime2}
+
+% https://tex.stackexchange.com/questions/87768/headers-and-footers
+\RequirePackage{fancyhdr}
 
 % Timestamp.
 \newcommand{\Timestamp}{{\DTMnow}}
@@ -183,25 +187,25 @@ BoldItalicFont=FreeSerifBoldItalic]
 \newcommand{\TildeSymbol}{{\normalfont\char"007E}}
 
 % Headers and footers: Blank header, page number in footer.
-\AtEndDocument{\null\label{LastPage}}
-\newcommand{\PageKOfN}{{\UseHeaderFooterFont{Page}~\thepage~of~\pageref{LastPage}}}
-\newcommand{\DraftStamp}{{\UseHeaderFooterFont\color{red}DRAFT~\Timestamp}}
+%\AtEndDocument{\null\label{LastPage}}
+%\newcommand{\PageKOfN}{{\UseHeaderFooterFont{Page}~\thepage~of~\pageref{LastPage}}}
+%\newcommand{\DraftStamp}{{\UseHeaderFooterFont\color{red}DRAFT~\Timestamp}}
 
-\ifnum\TypesetInDraftMode=0
-\newcommand{\HeaderText}{}
-\newcommand{\FooterText}{\hfill\PageKOfN\hfill}
-\else
-\newcommand{\HeaderText}{}
-\newcommand{\FooterText}{\null\hphantom{\DraftStamp}\hfill%
-\PageKOfN\hfill%
-\DraftStamp\null}
-\fi
+%\ifnum\TypesetInDraftMode=0
+%\newcommand{\HeaderText}{}
+%\newcommand{\FooterText}{\hfill\PageKOfN\hfill}
+%\else
+%\newcommand{\HeaderText}{}
+%\newcommand{\FooterText}{\null\hphantom{\DraftStamp}\hfill%
+%\PageKOfN\hfill%
+%\DraftStamp\null}
+%\fi
 
-\def\ps@plain{%
-\def\@oddhead{\HeaderText}%
-\def\@evenhead{\HeaderText}%
-\def\@oddfoot{\FooterText}%
-\def\@evenfoot{\FooterText}}
+%\def\ps@plain{%
+%\def\@oddhead{\HeaderText}%
+%\def\@evenhead{\HeaderText}%
+%\def\@oddfoot{\FooterText}%
+%\def\@evenfoot{\FooterText}}
 
 \pagestyle{plain}
 
